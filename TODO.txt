@@ -2,4 +2,7 @@
                                  T O D O s
                                  of Mirth
 
-
+o Open a window with Raylib
+o Manage closure of the window
+o Manage resize of the window
+o What about activate?
