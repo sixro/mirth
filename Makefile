@@ -7,7 +7,7 @@ CC=gcc-15
 # while all the other files will be compiled with C89.
 
 RAYLIB_CFLAGS=$(shell pkg-config --cflags raylib)
-CFLAGS_BASE=-Wall -Wextra -Werror $(RAYLIB_CFLAGS)
+CFLAGS_BASE=-g -Wall -Wextra -Werror $(RAYLIB_CFLAGS)
 CFLAGS=$(CFLAGS_BASE) -std=c89
 CFLAGS_C99=$(CFLAGS_BASE) -std=c99
 
