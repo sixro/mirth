@@ -1,7 +1,8 @@
 CC=gcc-15
 
-CFLAGS=-Wall -Wextra -std=c89
-LDFLAGS=
+RAYLIB_CFLAGS=$(shell pkg-config --cflags raylib)
+CFLAGS=-Wall -Wextra -Werror -std=c99 $(RAYLIB_CFLAGS)
+LDFLAGS=$(shell pkg-config --libs raylib)
 LIBS=
 
 PROG=mirth
@@ -21,6 +22,7 @@ $(PROG): $(OBJS)
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@echo Compiling $<...
 	@mkdir -p $(OBJDIR)
+	@echo RayLib C Flags: $(RAYLIB_CFLAGS)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
